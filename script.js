@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if a user has already logged in on this device
     if (localStorage.getItem('loggedIn') === 'true') {
-        window.location.href = 'under_construction.html';
+        window.location.href = 'final/index.html';
         return;
     }
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (username === defaultUsername && password === defaultPassword) {
             // Successful login
             localStorage.setItem('loggedIn', 'true'); // Mark as logged in
-            window.location.href = 'under_construction.html';
+            window.location.href = 'final/index.html';
         } else {
             // Failed login
             errorMessage.textContent = 'Invalid username or password.';

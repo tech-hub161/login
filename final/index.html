@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Business Snapshot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Business Snapshot</h1>
+            <p>Business Management sheet</p>
+            <div class="header-controls">
+                <input type="date" id="date-picker">
+                <input type="date" id="filter-date-picker">
+                <input type="text" id="search-bar" placeholder="Search...">
+                <button id="edit">Edit</button>
+                <button id="report">Report</button>
+                <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            </div>
+        </header>
+        <main>
+            <form id="data-entry-form">
+                <table id="data-entry-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Sold</th>
+                            <th>Rate</th>
+                            <th>Total</th>
+                            <th>PWT</th>
+                            <th>VC</th>
+                            <th>Current Bill</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </form>
+        </main>
+        <footer>
+            <div class="footer-buttons">
+                <button id="footer-add-new">Add New</button>
+                <button id="footer-save">Save</button>
+                <button id="footer-edit">Edit</button>
+                <button id="footer-report">Report</button>
+            </div>
+            <div id="status-indicator">
+                <p>Last Saved: <span id="last-saved-time">Never</span></p>
+                <p id="save-status">Pending Changes</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit Record</h2>
+            <form id="edit-form">
+                <label for="edit-customer-name">Customer Name:</label>
+                <input type="text" id="edit-customer-name" required>
+                <label for="edit-date">Date:</label>
+                <input type="date" id="edit-date" required>
+                <button type="submit">Fetch Record</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Security Overlay -->
+    <div id="security-overlay" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Unauthorized Device</h2>
+            <p>Access Denied. This application is locked to another device.</p>
+            <input type="password" id="pin-override" placeholder="Admin PIN">
+            <button id="pin-submit">Override</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

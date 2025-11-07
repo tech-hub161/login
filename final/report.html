@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Reports</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Saved Reports</h1>
+            <p>View, export, or delete saved records.</p>
+            <div class="header-controls">
+                <a href="index.html" class="button">Back to Home</a>
+                <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            </div>
+        </header>
+        <main class="report-main">
+            <aside class="sidebar">
+                <h2>Grouped by Date</h2>
+                <input type="text" id="search-bar" placeholder="Search by name or date...">
+                <div class="date-picker-container">
+                    <label for="date-picker">Select Date:</label>
+                    <input type="date" id="date-picker">
+                </div>
+                <div class="selection-actions" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <button id="select-all-records" style="flex-grow: 1;">Select All</button>
+                    <button id="clear-all-records" style="flex-grow: 1;">Clear All</button>
+                </div>
+                <div id="record-list">
+                    <!-- Record list will be populated by JavaScript -->
+                </div>
+                <div class="sidebar-actions">
+                    <button id="download-all">Download All</button>
+                    <button id="clear-all">Clear All</button>
+                </div>
+                <div class="sidebar-options" style="margin-top: 10px; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="combine-customers-toggle" checked>
+                    <label for="combine-customers-toggle">Combine all customers in one report</label>
+                </div>
+            </aside>
+            <section class="report-viewer">
+                <div id="report-content">
+                    <p>Select a record from the list to view details.</p>
+                </div>
+                <div class="report-actions">
+                    <button id="download-pdf">Download PDF</button>
+                    <button id="delete-record">Delete</button>
+                    <button id="edit-again">Edit Again</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="report.js"></script>
+</body>
+</html>
