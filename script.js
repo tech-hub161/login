@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('error-message');
 
     // Check if a user has already logged in on this device
-    if (localStorage.getItem('loggedIn') === 'true') {
+    if (sessionStorage.getItem('loggedIn') === 'true') {
         window.location.href = 'final/index.html';
         return;
     }
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (username === defaultUsername && password === defaultPassword) {
             // Successful login
-            localStorage.setItem('loggedIn', 'true'); // Mark as logged in
+            sessionStorage.setItem('loggedIn', 'true'); // Mark as logged in
             window.location.href = 'final/index.html';
         } else {
             // Failed login
